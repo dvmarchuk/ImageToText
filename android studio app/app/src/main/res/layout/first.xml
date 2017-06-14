@@ -10,12 +10,41 @@
     tools:context="antonio.survey.MainActivity">
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/bsm"
-        android:id="@+id/imageView2"
+        app:srcCompat="@drawable/back"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="111dp" />
+        android:layout_marginBottom="41dp" />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="22dp"
+        android:layout_marginStart="25dp"
+        android:text="Search picture" />
+
+    <Button
+        android:id="@+id/convert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/search"
+        android:layout_marginEnd="14dp"
+        android:text="Convert to Text" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:text="Image to text converter"
+        android:textSize="30sp" />
 
 </RelativeLayout>
