@@ -15,9 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InvalidObjectException;
 
-/**
- * Created by DennisMarchuk on 6/14/2017.
- */
+
 
 public class UserPicture {
 
