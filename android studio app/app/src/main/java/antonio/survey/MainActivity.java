@@ -88,22 +88,11 @@ public class MainActivity extends AppCompatActivity  {
                         getString(R.string.select_picture)), SELECT_SINGLE_PICTURE);
             }
         });
-
         // multiple image selection
-
 
         selectedImagePreview = (ImageView)findViewById(R.id.image_preview);
 
-
-
-
-
-
-
-
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -125,10 +114,6 @@ public class MainActivity extends AppCompatActivity  {
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
-
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -177,23 +162,7 @@ public class MainActivity extends AppCompatActivity  {
             }
             return null;
         }
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
 
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {
@@ -294,6 +263,7 @@ public class MainActivity extends AppCompatActivity  {
             int column_index = cursor
                     .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
             cursor.moveToFirst();
+            
             return cursor.getString(column_index);
         }
         // this is our fallback here, thanks to the answer from @mad indicating this is needed for
