@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity  {
 
     private ImageView selectedImagePreview;
 
+    String selectedImagePath;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -195,11 +196,14 @@ public class MainActivity extends AppCompatActivity  {
             if (requestCode == SELECT_SINGLE_PICTURE) {
 
                 Uri selectedImageUri = data.getData();
+                selectedImagePath = getPath(selectedImageUri);
                 try {
                     selectedImagePreview.setImageBitmap(new UserPicture(selectedImageUri, getContentResolver()).getBitmap());
                 } catch (IOException e) {
                     Log.e(MainActivity.class.getSimpleName(), "Failed to load image", e);
                 }
+                Toast.makeText(MainActivity.this, "this is the path" + selectedImagePath, Toast.LENGTH_LONG).show();
+
                 // original code
 //                String selectedImagePath = getPath(selectedImageUri);
 //                selectedImagePreview.setImageURI(selectedImageUri);
@@ -257,7 +261,7 @@ public class MainActivity extends AppCompatActivity  {
         // try to retrieve the image from the media store first
         // this will only work for images selected from gallery
         String[] projection = { MediaStore.Images.Media.DATA };
-        Cursor cursor = managedQuery(uri, projection, null, null, null);
+        Cursor cursor = MainActivity.this.getContentResolver().query(uri, projection, null, null, null);
         if( cursor != null ){
             int column_index = cursor
                     .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
