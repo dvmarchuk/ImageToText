@@ -27,6 +27,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static antonio.survey.R.id.container;
+
 
 public class first extends Fragment {
 
@@ -55,9 +57,8 @@ public class first extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.first, container, false);
 
-
+        final View rootView = inflater.inflate(R.layout.first, container, false);
 
         Button search = (Button)rootView.findViewById(R.id.search);
         search.setOnClickListener(new View.OnClickListener() {

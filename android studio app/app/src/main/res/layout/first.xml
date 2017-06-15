@@ -10,7 +10,7 @@
     tools:context="antonio.survey.MainActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/image_preview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/back"
