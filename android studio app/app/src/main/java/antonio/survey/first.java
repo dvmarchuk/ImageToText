@@ -34,10 +34,6 @@ public class first extends Fragment {
 
      EditText nameInput, ageInput, majorInput;
 
-
-
-
-
     public first(){
 
     }
@@ -49,9 +45,6 @@ public class first extends Fragment {
         intent.setAction(Intent.ACTION_GET_CONTENT);
      // startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
     }
-
-
-
 
 
     @Override
@@ -75,85 +68,33 @@ public class first extends Fragment {
 
         Button convert = (Button) rootView.findViewById(R.id.convert);
 
-
-
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Button clicked...", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
 
-
-
-
-
-
-
             }
         });
-
-
-
-
 
         convert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Button clicked...", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
-
-
-
-
-
-
-
-
             }
         });
-
-
-
-
             }
         });
-
-
 
         return rootView;
     }
-
-
 
     @Override
 public void onActivityCreated(Bundle SavedInstanceState){
 super.onActivityCreated(SavedInstanceState);
 
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

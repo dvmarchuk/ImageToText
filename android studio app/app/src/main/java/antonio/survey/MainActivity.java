@@ -84,8 +84,7 @@ public class MainActivity extends AppCompatActivity  {
                 Intent intent = new Intent();
                 intent.setType(IMAGE_TYPE);
                 intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent,
-                        getString(R.string.select_picture)), SELECT_SINGLE_PICTURE);
+                startActivityForResult(Intent.createChooser(intent, getString(R.string.select_picture)), SELECT_SINGLE_PICTURE);
             }
         });
         // multiple image selection
@@ -242,7 +241,7 @@ public class MainActivity extends AppCompatActivity  {
         }
     }
 
-    /**
+    /*
      * helper to retrieve the path of an image URI
      */
     public String getPath(Uri uri) {
@@ -263,27 +262,12 @@ public class MainActivity extends AppCompatActivity  {
             int column_index = cursor
                     .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
             cursor.moveToFirst();
-            
+
             return cursor.getString(column_index);
         }
         // this is our fallback here, thanks to the answer from @mad indicating this is needed for
         // working code based on images selected using other file managers
         return uri.getPath();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
