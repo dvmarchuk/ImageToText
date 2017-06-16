@@ -59,8 +59,7 @@ public class AddTemplate extends AppCompatActivity {
 
 
         //This gets the data from the textbox
-        EditText toField = (EditText) findViewById(R.id.editText);
-        String data = toField.getText().toString();
+
 
 
 
@@ -71,11 +70,21 @@ public class AddTemplate extends AppCompatActivity {
 
         findViewById(R.id.saveButton).setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+
+                EditText toField = (EditText) findViewById(R.id.editText);
+                String data = toField.getText().toString();
+
+                ArrayList arrayList = new ArrayList();
+
+
+               // LetterTemplates letters = new LetterTemplates(data, img);
+
+                Intent i = new Intent(AddTemplate.this, MainActivity.class);
+                startActivity(i);
+
+
                 //this button will push the image to the database and store it with the
                 // cooresponding letter saving it in the process
-
-
-
             }
         });
 
