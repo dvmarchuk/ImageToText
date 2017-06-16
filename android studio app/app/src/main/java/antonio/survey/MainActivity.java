@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity  {
                 intent.setType(IMAGE_TYPE);
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(Intent.createChooser(intent, getString(R.string.select_picture)), SELECT_SINGLE_PICTURE);
+
+
             }
         });
 
@@ -289,5 +291,40 @@ public class MainActivity extends AppCompatActivity  {
         // working code based on images selected using other file managers
         return uri.getPath();
     }
+
+    /*public void OkHTTP(){
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url("http://publicobject.com/helloworld.txt")
+                .build();
+
+        try {
+            Response response = client.newCall(request).execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+        client.newCall(request).enqueue(new Callback() {
+            public void onResponse(Call call, final Response response) throws IOException {
+                // ... check for failure using `isSuccessful` before proceeding
+
+                // Read data on the worker thread
+                final String responseData = response.body().string();
+
+                // Run view-related code back on the main thread
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                            TextView myTextView = (TextView) findViewById(R.id.textView);
+                            myTextView.setText(responseData);
+
+                    }
+                }
+            }
+        });
+    }*/
 
 }
