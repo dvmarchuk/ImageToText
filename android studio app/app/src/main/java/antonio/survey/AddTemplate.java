@@ -69,6 +69,16 @@ public class AddTemplate extends AppCompatActivity {
 
 
 
+        findViewById(R.id.saveButton).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                //this button will push the image to the database and store it with the
+                // cooresponding letter saving it in the process
+
+
+
+            }
+        });
+
 
 
     }

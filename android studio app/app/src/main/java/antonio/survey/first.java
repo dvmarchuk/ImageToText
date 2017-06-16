@@ -6,28 +6,14 @@ package antonio.survey;
 
 
 import android.content.Intent;
-
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-
-import android.widget.RelativeLayout;
-import android.widget.SeekBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import static antonio.survey.R.id.container;
 
 
 public class first extends Fragment {
@@ -39,12 +25,7 @@ public class first extends Fragment {
     }
 
 
-    public void pickImage(){
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-     // startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
-    }
+
 
 
     @Override
@@ -53,30 +34,30 @@ public class first extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.first, container, false);
 
+        Button template = (Button)rootView.findViewById(R.id.setTemplate);
+        template.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), AddTemplate.class);
+                startActivity(i);
+            }
+        });
+
+
+
         Button search = (Button)rootView.findViewById(R.id.search);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(intent, TFRequestCodes.GALLERY);*/
 
-                BrowsePictureActivity bpa = new BrowsePictureActivity();
-
-        Button search = (Button) rootView.findViewById(R.id.search);
-
-        Button convert = (Button) rootView.findViewById(R.id.convert);
-
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
                 Snackbar.make(view, "Button clicked...", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
 
             }
         });
 
+
+        Button convert = (Button) rootView.findViewById(R.id.convert);
         convert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,10 +65,23 @@ public class first extends Fragment {
                         .setAction("Action", null).show();
             }
         });
-            }
-        });
+
+
+
+
+
+
+
+
+
+
 
         return rootView;
+
+
+
+
+
     }
 
     @Override
